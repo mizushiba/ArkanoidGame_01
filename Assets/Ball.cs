@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     public Rigidbody2D rb;
     public bool inPlay;
     public Transform paddle;
-    //public float speed = 5f;
+    public float speed;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
         }
         if (Input.GetButtonDown ("Jump") && !inPlay) {
             inPlay = true;
-            rb.AddForce (Vector2.up * 500);
+            rb.AddForce (Vector2.up * speed);
         }
     }
 

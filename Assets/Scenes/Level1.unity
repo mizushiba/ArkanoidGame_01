@@ -199,6 +199,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1551828949}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &143232646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143232647}
+  m_Layer: 0
+  m_Name: ball position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143232647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143232646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 429210172}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &148049147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1264412314440956999, guid: e00d53df16cdda14f9ea0e8b44a2aaaf,
@@ -278,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155361591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1294,9 +1324,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.784048, y: 2.80555, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 143232647}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &429210173
 PolygonCollider2D:
@@ -1342,6 +1373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bacb71aa5863f5343807446677414c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  rightScreenEdge: 30
+  leftScreenEdge: 2
 --- !u!1001 &430300280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1423,7 +1457,7 @@ GameObject:
   - component: {fileID: 434095601}
   - component: {fileID: 434095600}
   m_Layer: 0
-  m_Name: Block Square (2)
+  m_Name: rightedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,7 +1526,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69a44272002cd4a4cafe76a8c828c805, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1500,7 +1534,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &434095602
@@ -1515,7 +1549,7 @@ Transform:
   m_LocalScale: {x: 2.2375, y: 27.645624, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &443270756
 PrefabInstance:
@@ -2416,11 +2450,11 @@ GameObject:
   m_Component:
   - component: {fileID: 767504929}
   - component: {fileID: 767504928}
-  - component: {fileID: 767504927}
   - component: {fileID: 767504926}
+  - component: {fileID: 767504927}
   m_Layer: 0
-  m_Name: Block Square (3)
-  m_TagString: Untagged
+  m_Name: bottomdeathedge
+  m_TagString: bottom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2461,8 +2495,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a01e9a1c38de99b429272c8c7c2f7a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &767504928
@@ -2521,11 +2553,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767504925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.55, y: -1.28, z: 0}
+  m_LocalPosition: {x: 15.55, y: -1.51, z: 0}
   m_LocalScale: {x: 33.695156, y: 1.7125, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &770176141
 PrefabInstance:
@@ -2782,7 +2814,7 @@ Transform:
   m_Children:
   - {fileID: 206630712}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &979748894 stripped
 Transform:
@@ -3487,11 +3519,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394364821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.01, y: 5.716, z: -1}
+  m_LocalPosition: {x: 16, y: 5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1394364826
 MonoBehaviour:
@@ -3505,6 +3537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af959da745e2a3149a5a807862638821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  inPlay: 0
+  paddle: {fileID: 143232647}
+  speed: 400
 --- !u!1001 &1415781583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3685,7 +3721,7 @@ GameObject:
   - component: {fileID: 1531372481}
   - component: {fileID: 1531372480}
   m_Layer: 0
-  m_Name: Block Square
+  m_Name: leftedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3754,7 +3790,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69a44272002cd4a4cafe76a8c828c805, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3762,7 +3798,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1531372482
@@ -3773,11 +3809,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531372479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.29, y: 12.29, z: 0}
+  m_LocalPosition: {x: -1.16, y: 12.29, z: 0}
   m_LocalScale: {x: 2.2375, y: 27.645624, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1538993722 stripped
 Transform:
@@ -5246,7 +5282,7 @@ GameObject:
   - component: {fileID: 2127266248}
   - component: {fileID: 2127266247}
   m_Layer: 0
-  m_Name: Block Square (1)
+  m_Name: topedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5315,7 +5351,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69a44272002cd4a4cafe76a8c828c805, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5323,7 +5359,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2127266249
@@ -5338,5 +5374,5 @@ Transform:
   m_LocalScale: {x: 33.695156, y: 1.7125, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

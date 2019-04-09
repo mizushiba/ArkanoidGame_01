@@ -6,13 +6,18 @@ public class Paddle : MonoBehaviour
 {
 
     public float speed;
-    //private float input;
     public float rightScreenEdge;
     public float leftScreenEdge;
+    public GameManager gm;
 
     void Update()
     {
-        //input = Input.GetAxisRaw("Horizontal");
+        if (gm.gameOver)
+        {
+            return;
+        }
+    
+
         float horizontal = Input.GetAxis("Horizontal");
 
         transform.Translate(Vector2.right * horizontal * Time.deltaTime * speed);
@@ -25,9 +30,4 @@ public class Paddle : MonoBehaviour
             transform.position = new Vector2(rightScreenEdge, transform.position.y);
         }
     }
-    //private void FixedUpdate()
-   // {
-        //GetComponent<Rigidbody2D>().velocity = Vector2.right * input * speed;
-    
-   // }
 }

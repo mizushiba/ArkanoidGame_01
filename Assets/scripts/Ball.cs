@@ -21,6 +21,12 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+
+        if (gm.gameOver)
+        {
+            return;
+        }
+
         if (inPlay== false)
         {
             transform.position = paddle.position;

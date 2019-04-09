@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class GameManager : MonoBehaviour
     public int score;
     public Text livesText;
     public Text scoreText;
-
+    public bool gameOver;
+    public GameObject gameOverpanel;
 
 
     // Start is called before the first frame update
@@ -29,7 +31,15 @@ public class GameManager : MonoBehaviour
     public void UpdateLives(int changeInLives)
     {
         lives += changeInLives;
+
+        if (lives <= 0)
+        {
+            lives = 0;
+            GameOver();
+        }
+
         livesText.text = "Lives : " + lives;
+
     }
 
     public void UpdateScore(int points)
@@ -37,5 +47,25 @@ public class GameManager : MonoBehaviour
         score += points;
 
         scoreText.text = "Score: " + score;
+    }
+
+    void GameOver()
+    {
+        gameOver = true;
+        gameOverpanel.SetActive (true);
+    }
+
+    public void PlayAgain()
+    {
+        //SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

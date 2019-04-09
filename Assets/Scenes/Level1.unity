@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bacb71aa5863f5343807446677414c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   rightScreenEdge: 30
   leftScreenEdge: 2
 --- !u!1001 &430300280
@@ -2534,7 +2534,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69a44272002cd4a4cafe76a8c828c805, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2542,7 +2542,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &767504929
@@ -3540,7 +3540,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   inPlay: 0
   paddle: {fileID: 143232647}
-  speed: 400
+  speed: 600
 --- !u!1001 &1415781583
 PrefabInstance:
   m_ObjectHideFlags: 0

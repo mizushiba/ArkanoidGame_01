@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     public Transform paddle;
     public float speed;
     public Transform explosion;
+    public GameManager gm;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class Ball : MonoBehaviour
             Debug.Log("HIT");
             rb.velocity = Vector2.zero;
             inPlay = false;
+            gm.UpdateLives(-1);
         }
     }
     void OnCollisionEnter2D(Collision2D other){
@@ -44,6 +46,9 @@ public class Ball : MonoBehaviour
         {
            Transform newExplosion = Instantiate (explosion, other.transform.position, other.transform.rotation);
             Destroy(newExplosion.gameObject, 2.5f);
+
+            gm.UpdateScore(other.gameObject.GetComponent<BrickScript>().points);
+
             Destroy(other.gameObject);
         }
         }

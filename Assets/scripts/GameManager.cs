@@ -13,16 +13,18 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public bool gameOver;
     public GameObject gameOverpanel;
+    public int numberOfBricks;
 
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         livesText.text = "Lives : " + lives;
         scoreText.text = "Score : " + score;
+        numberOfBricks = GameObject.FindGameObjectsWithTag ("Brick").Length;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -49,6 +51,18 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+
+    public void UpdateNumberOfBricks()
+    {
+        numberOfBricks--;
+        if (numberOfBricks <= 0)
+        {
+            //NEXT LEVEL HERE
+            //game over for now
+
+            GameOver();
+        }
+    }
     void GameOver()
     {
         gameOver = true;

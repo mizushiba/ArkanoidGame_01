@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public Text livesText;
     public Text scoreText;
     public bool gameOver;
+    public bool levelCleared;
     public GameObject gameOverpanel;
+    public GameObject nextLevelpanel;
     public int numberOfBricks;
 
 
@@ -57,10 +59,7 @@ public class GameManager : MonoBehaviour
         numberOfBricks--;
         if (numberOfBricks <= 0)
         {
-            //NEXT LEVEL HERE
-            //game over for now
-
-            GameOver();
+            LevelCleared();
         }
     }
     void GameOver()
@@ -68,11 +67,21 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         gameOverpanel.SetActive (true);
     }
+    void LevelCleared()
+    {
+        levelCleared = true;
+        nextLevelpanel.SetActive (true);
+    }
 
     public void PlayAgain()
     {
         //SceneManager.LoadScene("Level1");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+    }
+    public void NextLevel()
+    {
+        //SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void BackToMenu()
     {

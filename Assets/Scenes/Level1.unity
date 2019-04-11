@@ -1961,13 +1961,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434095599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.11, y: 12.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.01745245, w: 0.99984777}
+  m_LocalPosition: {x: 33.02, y: 12.29, z: 0}
   m_LocalScale: {x: 2.2375, y: 27.645624, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2}
 --- !u!1001 &443270756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4760,13 +4760,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531372479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.16, y: 12.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.01745245, w: 0.99984777}
+  m_LocalPosition: {x: -0.89, y: 12.29, z: 0}
   m_LocalScale: {x: 2.2375, y: 27.645624, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2}
 --- !u!4 &1538993722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1264412314440956999, guid: e00d53df16cdda14f9ea0e8b44a2aaaf,
@@ -5963,6 +5963,7 @@ MonoBehaviour:
   scoreText: {fileID: 75399910}
   gameOver: 0
   gameOverpanel: {fileID: 557861326}
+  numberOfBricks: 0
 --- !u!4 &1972581857
 Transform:
   m_ObjectHideFlags: 0
